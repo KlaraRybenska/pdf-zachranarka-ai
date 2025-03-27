@@ -3,14 +3,11 @@ import fitz  # PyMuPDF
 import tempfile
 import os
 
-# Zvýšení limitu pro upload souborů
-st.set_option("server.maxUploadSize", 500)
-
 st.set_page_config(page_title="PDF Záchranářka AI", layout="centered")
 st.title("\U0001f9e0 PDF Záchranářka AI")
 st.write("Zkusím vytáhnout text a obrázky i z poškozeného PDF.")
 
-uploaded_file = st.file_uploader("Nahraj svůj PDF soubor", type=["pdf"])
+uploaded_file = st.file_uploader("Nahraj svůj PDF soubor", type=["pdf"], help="Limit souboru závisí na nastavení Streamlitu (standardně 200 MB)")
 
 if uploaded_file is not None:
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
