@@ -1,2 +1,7 @@
 streamlit
 PyMuPDF
+pytesseract
+Pillow
+deepl
+kraken
+
