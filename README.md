@@ -59,6 +59,22 @@ streamlit run app.py
 ```
 
 ---
+☁️ Nasazení na Streamlit Cloud (https://streamlit.io/cloud)
+
+Nahraj repozitář na GitHub.
+
+Přihlas se do Streamlit Cloud a propoj svůj repozitář.
+
+V Settings → Secrets přidej proměnnou:
+
+[deepl]
+api_key = "TVUJ-DEEPL-KLIC"
+
+V Settings → Advanced nastav Python version = 3.10 (nebo podle potřeby).
+
+To je vše – aplikace poběží online bez nutnosti nahrávat secrets.toml!
+
+---
 
 ## 📁 Struktura projektu
 
