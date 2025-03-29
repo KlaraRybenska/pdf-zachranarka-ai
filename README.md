@@ -1,57 +1,100 @@
-🧠 PDF Záchranářka AI
+# 🧠 PDF Záchranářka AI
 
-Vítej! Tahle aplikace slouží k záchraně textu a obrázků i z poškozených PDF souborů. Je to jednoduchá webová aplikace postavená ve Streamlitu (což je kouzelný nástroj v Pythonu), kterou zvládne spustit i začátečník. A hlavně – umí pomoct, když běžný prohlížeč selže.
+Chytrá aplikace pro extrakci textu a obrázků z PDF dokumentů s podporou OCR a překladu pomocí DeepL.  
+Užitečný nástroj pro humanitní vědy, archivnictví, výuku nebo výzkum.
 
-✨ Co aplikace umí:
+![logo](cat.png)
 
-✅ Načíst (i poškozené) PDF soubory
+---
 
-📄 Vypsat extrahovaný text ze všech stránek
+## 🔧 Co aplikace umí:
 
-⬇️ Umožnit stáhnutí extrahovaného textu jako .txt
+- 📄 Extrahuje text z PDF (včetně poškozených dokumentů)
+- 🖼️ Rozpoznává text z vložených obrázků (OCR pomocí Tesseract)
+- 🌍 Překládá text do češtiny pomocí **DeepL API**
+- 📥 Nabízí stažení všech výstupů jako `.txt`
+- 🧪 Připraveno pro budoucí integraci HTR (Kraken, Transkribus...)
 
-🖼️ Zobrazit všechny nalezené obrázky v dokumentu
+---
 
-🧽 Automaticky zahodit dočasné soubory po zpracování
+## 🌐 Podporované jazyky
 
-🔧 Jak to spustit (lokálně):
+- Angličtina (ENG)
+- Čeština (CZ)
+- Němčina (NJ)
+- Francouzština (FJ)
 
-Ujisti se, že máš nainstalovaný Python (verze 3.8+)
+> 🔤 Překlad probíhá do češtiny (CS), pokud originál není v češtině.
 
-Nainstaluj knihovny:
+---
 
+## 🚀 Jak spustit lokálně
+
+1. **Naklonuj repozitář:**
+```bash
+git clone https://github.com/TVOJE-REPO/pdf-zachranarka.git
+cd pdf-zachranarka
+```
+
+2. **Nainstaluj závislosti:**
+```bash
 pip install -r requirements.txt
+```
 
-Spusť aplikaci:
+3. **Vytvoř složku `.streamlit` a uvnitř soubor `secrets.toml`:**
 
+```
+.streamlit/secrets.toml
+```
+
+A vlož svůj DeepL API klíč:
+```toml
+[deepl]
+api_key = "TVUJ-DEEPL-KLIC"
+```
+
+4. **Spusť aplikaci:**
+```bash
 streamlit run app.py
+```
 
-📦 Co najdeš v repozitáři:
+---
 
-Soubor
+## 📁 Struktura projektu
 
-Popis
+```
+pdf-zachranarka/
+├── app.py
+├── cat.png
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .streamlit/
+    └── secrets.toml
+```
 
-app.py
+---
 
-Hlavní aplikace ve Streamlitu (i s komentáři!)
+## ⚠️ Bezpečnost
 
-requirements.txt
+- API klíč **nikdy neukládej veřejně** do repozitáře.
+- `.streamlit/secrets.toml` je v `.gitignore`, takže zůstane soukromý.
+- Bezplatný tarif DeepL má **limit 50 000 znaků/měsíc**.
 
-Seznam knihoven, které je potřeba nainstalovat
+---
 
-❤️ Proč vznikla tahle aplikace?
+## 💡 Autor
 
-Protože někdy dostaneme PDF, které nejde otevřít, nebo ho něco zkazí, ale obsah je pro nás důležitý. Tahle appka vznikla s láskou pro všechny archiváře, učitele, badatele a zvídavé duše, které chtějí svá data zachránit.
+Tento projekt vytvořila **Klára Rybenská** ❤️  
+S podporou 🧠 ChatGPT jako vývojového partnera.
 
-Autorka: Klára RybenskáSpolupráce: AI asistent s duší pedagoga 🧑‍🏫
+---
 
-🚀 Co chystáme dál?
-.
+## ✨ Budoucí rozšíření
 
+- 📜 Integrace HTR (Kraken, TrOCR, Transkribus)
+- 🧠 Trénování vlastního modelu pro historickou češtinu
+- ☁️ Nasazení na Streamlit Cloud pro online přístup
 
-💬 Jak přispět nebo se ptát?
+> Děkujeme, že zachraňujete PDFka s námi! 🚀
 
-Můžeš vytvořit issue, poslat pull request, nebo jen napsat autorce – budeme rádi za zpětnou vazbu i nové nápady.
-
-📚 Děkujeme, že používáte PDF Záchranářku. Každý zachráněný dokument znamená jeden dobrý skutek navíc.
